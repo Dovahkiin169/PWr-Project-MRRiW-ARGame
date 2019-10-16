@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppThemeDark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/coinView"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:background="@color/HomeDark"
+                    android:drawableLeft="@drawable/coin_sizer"
+                    android:gravity="right"
+                    android:paddingLeft="10dip"
+                    android:text=""
+                    android:textAlignment="gravity"
+                    android:textColor="@color/HomeWhite"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toTopOf="@+id/car_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/car_1"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/HomeDark"
+                    android:drawableLeft="@drawable/car_1_sizer"
+                    android:onClick="car1isPressed"
+                    android:text="Speed: 10\n Corner speed: 10"
+                    app:layout_constraintBottom_toTopOf="@+id/car_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/coinView" />
+
+                <Button
+                    android:id="@+id/car_2_unlocked"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/HomeDark"
+                    android:drawableLeft="@drawable/car_2_sizer"
+                    android:onClick="car2isPressed"
+                    android:text="Speed: 20\n Corner speed: 15"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/car_3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/car_1" />
+
+                <Button
+                    android:id="@+id/car_2"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/HomeDark"
+                    android:drawableLeft="@drawable/car_2_sizer"
+                    android:drawableRight="@drawable/lock_sizer"
+                    android:onClick="car2isPressed"
+                    android:text="Speed: 20\n Corner speed: 15"
+                    app:layout_constraintBottom_toTopOf="@+id/car_3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/car_1" />
+
+                <Button
+                    android:id="@+id/car_3_unlocked"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="45dp"
+                    android:background="@color/HomeDark"
+                    android:drawableLeft="@drawable/car_3_sizer"
+                    android:onClick="car3isPressed"
+                    android:text="Speed: 20\n Corner speed: 20"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/car_2" />
+
+                <Button
+                    android:id="@+id/car_3"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="45dp"
+                    android:background="@color/HomeDark"
+                    android:drawableLeft="@drawable/car_3_sizer"
+                    android:drawableRight="@drawable/lock_sizer"
+                    android:onClick="car3isPressed"
+                    android:text="Speed: 20\n Corner speed: 20"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/car_2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

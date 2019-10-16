@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">New Unity Project (1)</string>
+    <string name="game_view_content_description">Game view</string>
+    <string name="title_activity_main2">AR Race Game</string>
+
+    <string name="prefs_theme_key">prefs_theme_key</string>
+    <string name="prefs_points_key">prefs_points_key</string>
+    <string name="prefs_music_key">prefs_music_key</string>
+    <string name="prefs_car2_key">prefs_car2_key</string>
+    <string name="prefs_car3_key">prefs_car3_key</string>
+    <string name="prefs_choosed_car">prefs_choosed_car</string>
+
+</resources>
