@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdkVersion 23
+        targetSdkVersion 28
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+        versionCode 1
+        versionName '0.1'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', 'vuforia/dollardatabase.dat', 'vuforia/dollardatabase.xml']
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+            signingConfig signingConfigs.debug
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+            signingConfig signingConfigs.debug
+        }
+    }
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+    }
+
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation files('/Users/dmitriyverhovskiy/Downloads/AR_Car_/libs/app-debug.aar')
+    implementation files('/Users/dmitriyverhovskiy/Downloads/01_Trump/MyApplication2/libs/unity-classes.jar')
+    implementation files('/Users/dmitriyverhovskiy/Downloads/01_Trump/MyApplication2/libs/VuforiaWrapper.aar')
+}
