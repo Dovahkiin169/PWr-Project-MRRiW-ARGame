@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -65,10 +66,10 @@ public class MainMenu extends AppCompatActivity {
             String[] UI=UserInfo.split("//");
             Car2Status = UI[0];
             Car3Status = UI[1];
-
-
         }
     }
+
+
 
     public void startIsPressed(View view) {
 
@@ -350,7 +351,8 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        Utility.setPoints(MainMenu.this,1000);
+        GamePoints = Utility.getPoints(MainMenu.this);
+        Utility.setPoints(MainMenu.this,GamePoints+500);
         GamePoints = Utility.getPoints(MainMenu.this);
 
 
