@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.Window;
@@ -39,6 +40,14 @@ public class UnityPlayerActivity extends Activity
         mUnityPlayer = new UnityPlayer(this);
         setContentView(mUnityPlayer);
         mUnityPlayer.requestFocus();
+    }
+
+    public void shareText(String Points) {
+        //Log.e("shareText",String.valueOf(Points));
+        String digits = Points.replaceAll("[^0-9.]", "");
+        int GamePoints = Utility.getPoints(UnityPlayerActivity.this);
+        GamePoints = GamePoints + Integer.valueOf(digits);
+        Utility.setPoints(UnityPlayerActivity.this,GamePoints);
     }
 
     @Override
